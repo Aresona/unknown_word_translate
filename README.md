@@ -29,7 +29,7 @@ git clone git@github.com:Aresona/unknown_word_translate.git
 pip install -r < requirement.txt
 ```
 
-3. 修改配置文件 `config`
+3. 修改配置文件 `config.py`
 
 > 分别填入网站域名、初始网页、最终生成的文件名字、git 仓库及文件存放指定位置
 
