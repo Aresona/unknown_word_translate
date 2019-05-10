@@ -76,6 +76,7 @@ def github_upload(filename):
         index.commit('Upload ' + filename)
         remote = repository.remote()
         remote.push()
+        shutil.rmtree(config.path)
     else:
         print('file does\'nt exist')
 
