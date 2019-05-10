@@ -4,3 +4,6 @@ idna==2.8
 lxml==4.3.3
 requests==2.21.0
 urllib3==1.24.3
+gitdb2==2.0.5
+GitPython==2.1.11
+smmap2==2.0.5
