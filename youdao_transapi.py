@@ -6,8 +6,8 @@ import time
 
 
 YOUDAO_URL = 'http://openapi.youdao.com/api'
-APP_KEY = '5df171c897e81fff'
-APP_SECRET = '0uLCjScR0XxbSIUdsHLQmkplAQTPcyRl'
+APP_KEY = '5df171c897e81ffff'
+APP_SECRET = '0uLCjScR0XxbSIUdsHLQmkplAQTPcyRll'
 
 
 def encrypt(signStr):
