@@ -1,8 +1,12 @@
+import os
 import json
+import shutil
 import config
 import youdao_transapi
+from git import Repo as repo
 
 
+# 翻译生词 
 def translate_word():
     with open(filename, 'r', encoding='utf8') as f:
         for line in f.readlines():
@@ -59,8 +63,26 @@ def generate_md(count):
                     f.write('|' + seg.replace('\n', '|\n'))
 
 
+# 这里加了一个remove_file,本来在支持完脚本后删除，但一旦出错后再调翻译接口有点浪费，所以这里建议手动删除
+def github_upload(filename):
+    # remove_file = 'temp_' + filename
+    filename = filename + '.md'
+    if os.path.exists(filename):
+        repository = repo.clone_from(url=config.repository, to_path=config.path)
+        shutil.move(filename, config.path)
+        # os.remove(remove_file)
+        index = repository.index
+        index.add(items=[filename])
+        index.commit('Upload ' + filename)
+        remote = repository.remote()
+        remote.push()
+    else:
+        print('file does\'nt exist')
+
+
 if __name__ == '__main__':
     filename = config.filename
     translate_word()
     count = get_list_count()
     generate_md(count)
+    github_upload(filename)
