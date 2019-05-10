@@ -8,7 +8,6 @@ def translate_word():
         for line in f.readlines():
             word = line.replace('\n', '').split('\t')[0]
             result = youdao_transapi.connect(word)
-            print(result)
             result = json.loads(result)
             l = []
             try:
@@ -20,9 +19,7 @@ def translate_word():
             except:
                 pass
             try:
-                print(l)
                 result = result['basic']['explains'] + l
-                print(result)
                 result_list = line.split('\t')
                 for item in result:
                     result_list.insert(1, item + '\t')
