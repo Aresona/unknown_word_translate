@@ -1,8 +1,8 @@
 filename = "docker"
 domain = "https://docs.docker.com/"
 start_url = "https://docs.docker.com/get-started/"
-repository = ""
-path = ""
+repository = "git@github.com:Aresona/New-words.git"
+path = "New-words"
 
 # domain = 'https://kubernetes.io/'
 # start_url = 'https://kubernetes.io/docs/home/'
